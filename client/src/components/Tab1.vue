@@ -13,7 +13,7 @@
 
       <ion-card>
         <ion-card-header>
-          <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" alt="">
+          <ion-img src="https://cdn.discordapp.com/attachments/553763099061125131/591222475656790017/intel_meme.PNG"></ion-img>
           <ion-card-title>Post title</ion-card-title>
         </ion-card-header>
 
@@ -21,9 +21,15 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti atque eos porro, eaque velit ab laudantium deserunt quam! 
           Recusandae aperiam voluptatem, aliquid praesentium dicta dolorum sunt eligendi omnis eveniet tenetur.
         </ion-card-content>
-      </ion-card>
 
-      <ion-button @click="nextPage()">Next Page</ion-button>
+        <ion-button class="button" @click="nextPage()">Read More</ion-button>
+        <ion-button class="button" >
+          <ion-icon name="thumbs-up"></ion-icon>
+        </ion-button>
+        <ion-button class="button" >
+          <ion-icon name="thumbs-down"></ion-icon>
+        </ion-button>
+      </ion-card>
     </ion-content>
   </ion-page>
 </template>
@@ -43,4 +49,8 @@ export default {
 </script>
 
 <style>
+.button {
+  font-size: 12px;
+
+}
 </style>

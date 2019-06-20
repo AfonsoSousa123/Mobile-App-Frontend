@@ -11,6 +11,14 @@
       <ion-item>
         <h1>Login</h1>
       </ion-item>
+
+      <div>
+        <ion-icon name="person"></ion-icon>
+        <ion-input type="text" clearInput value="" placeholder="Email"></ion-input>
+
+        <ion-icon name="lock"></ion-icon>
+        <ion-input type="password" clearInput value="" placeholder="Password"></ion-input>
+      </div>
     </ion-content>
   </ion-page>
 </template>

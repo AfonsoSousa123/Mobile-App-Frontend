@@ -20,13 +20,13 @@
         </ion-tab-button>
 
         <ion-tab-button tab="/tab2">
-          <ion-icon name="contacts"/>
+          <ion-icon name="contact"/>
           <ion-label>Login</ion-label>
         </ion-tab-button>
 
         <ion-tab-button tab="/tab3">
-          <ion-icon name="contacts"/>
-          <ion-label>Register</ion-label>
+          <ion-icon name="contact"/>
+          <ion-label>Sign Up</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>

@@ -9,8 +9,14 @@
     </ion-header>
     <ion-content padding>
       <ion-item>
-        <h1>Register</h1>
+        <h1>Sign Up</h1>
       </ion-item>
+
+      <div>
+        <ion-input type="text" clearInput value="" placeholder="Username"></ion-input>
+        <ion-input type="text" clearInput value="" placeholder="Email"></ion-input>
+        <ion-input type="password" clearInput value="" placeholder="Password"></ion-input>
+      </div>
     </ion-content>
   </ion-page>
 </template>
