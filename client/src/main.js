@@ -48,6 +48,14 @@ const router = new IonicVueRouter({
             tab2: () =>
               import(/* webpackChunkName: "tab2" */ "@/components/Tab2.vue")
           }
+        },
+        {
+          path: "/tab3",
+          name: "tab3",
+          components: {
+            tab3: () =>
+              import(/* webpackChunkName: "tab3" */ "@/components/Tab3.vue")
+          }
         }
       ]
     }
