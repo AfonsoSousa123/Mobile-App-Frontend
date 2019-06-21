@@ -23,15 +23,6 @@
               </ion-avatar>
             </ion-thumbnail>
             <ion-label>{{user.userName}}</ion-label>
-            <ion-label class="margin-label">Finn</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail>
-              <ion-avatar>
-                <img width="100" height="50" src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
-              </ion-avatar>
-            </ion-thumbnail>
-            <ion-label class="margin-label">Mega Man X</ion-label>
           </ion-item>
         </ion-list>
       </div>
