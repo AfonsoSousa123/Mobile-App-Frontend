@@ -12,7 +12,7 @@ USE ionic;
 --
 CREATE TABLE `utilizador` (
   `utilizador_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `nome` VARCHAR(55) NOT NULL,
+  `username` VARCHAR(55) NOT NULL,
   `email` VARCHAR(55) NOT NULL,
   `password` VARCHAR(55) NOT NULL
 ) ENGINE=InnoDB;

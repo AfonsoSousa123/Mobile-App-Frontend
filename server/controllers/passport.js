@@ -14,7 +14,7 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
-        return done(null, user.user_id);
+        return done(null, user.utilizador_id);
     });
 
     // used to deserialize the user
@@ -45,7 +45,7 @@ module.exports = function(passport) {
             var newUser = {
                     email: email,
                     password: md5(password),
-                    nome: req.body.nome,
+                    username: req.body.username,
                 }
                 // find a user whose email is the same as the form email
                 // we are checking to see if the user trying to login already exists
@@ -54,8 +54,8 @@ module.exports = function(passport) {
                 if (error) {
                     return done(error);
                 } else if (Object.keys(results).length == 0) { //IF = 0 means it didn't return anything so it does not exist so we will create that user ->
-                    var sql = "INSERT INTO utilizador SET email = ?, password = ?, nome = ?";
-                    connection.query(sql, [newUser.email, newUser.password, newUser.name], function(error, results, fields) { //Execute sql query and add data into the table users
+                    var sql = "INSERT INTO utilizador SET email = ?, password = ?, username = ?";
+                    connection.query(sql, [newUser.email, newUser.password, newUser.username], function(error, results, fields) { //Execute sql query and add data into the table users
                         if (error) {
                             return done(error);
                         } else {

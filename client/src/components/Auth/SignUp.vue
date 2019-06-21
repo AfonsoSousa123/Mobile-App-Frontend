@@ -7,47 +7,88 @@
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
-
       <div text-center>
         <h4>Sign Up</h4>
       </div>
-      <div padding>
-        <ion-item>
-          <ion-input type="text" placeholder="Username">
-            <ion-icon name="person"></ion-icon>
-          </ion-input>
-        </ion-item>
+      <form v-on:submit.prevent="SignUp" id="submitForm">
+        <div padding>
+          <ion-item>
+            <ion-input type="text" name="username" placeholder="Username">
+              <ion-icon name="person"></ion-icon>
+            </ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-input type="text" placeholder="Email">
-            <ion-icon name="mail"></ion-icon>
-          </ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input type="text" name="email" placeholder="Email">
+              <ion-icon name="mail"></ion-icon>
+            </ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-input type="password" placeholder="Password">
-            <ion-icon name="lock"></ion-icon>
-          </ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input type="password" name="password" placeholder="Password">
+              <ion-icon name="lock"></ion-icon>
+            </ion-input>
+          </ion-item>
 
-         <ion-item>
-          <ion-input type="password" placeholder="Repeat Password">
-            <ion-icon name="lock"></ion-icon>
-          </ion-input>
-        </ion-item>
-      </div>
+          <ion-item>
+            <ion-input type="password" name="repeatedPassword" placeholder="Repeat Password">
+              <ion-icon name="lock"></ion-icon>
+            </ion-input>
+          </ion-item>
+        </div>
 
-      <div padding>
-        <ion-button size="large" color="dark" href expand="block">Sign Up</ion-button>
-      </div>
-      
+        <div padding>
+          <ion-button
+            size="large"
+            type="submit"
+            color="dark"
+            href
+            expand="block"
+            form="submitForm"
+          >Sign Up</ion-button>
+        </div>
+      </form>
     </ion-content>
   </ion-page>
 </template>
 
 <script>
+const API_URL = "http://localhost:3000/users/signup";
+import axios from "axios";
+
 export default {
-  name: "SignUp"
+  name: "SignUp",
+  data() {
+    return {
+      config: {
+        withCredentials: true
+      }
+    };
+  },
+  methods: {
+    responseSignup(res) {
+      if(res.data.isRegisted == false){
+        console.log("Failed login");
+      }else{
+        this.$route.go('/login');
+      }
+    },
+    SignUp(e) {
+      e.preventDefault();
+      var username = e.target.elements.username.value;
+      var email = e.target.elements.email.value;
+      var password = e.target.elements.password.value;
+      var repeatedPassword = e.target.elements.password.value;
+      var data = {
+        username: username,
+        email: email,
+        password: password
+      };
+      axios
+        .post(API_URL, data, this.config)
+        .then(Response => this.responseSignup(Response));
+    }
+  }
 };
 </script>
 

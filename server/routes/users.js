@@ -39,7 +39,7 @@ router.post('/signup', function(req, res, next) {
     if (req.user) {
         res.send("Logout first!");
     } else {
-        if ((!req.body.email) || (!req.body.password) || (!req.body.contacto) || (!req.body.name) || (!req.body.data_nasc)) {
+        if ((!req.body.email) || (!req.body.password) || (!req.body.username)) {
             return res.send("Error missing info!!!");
         } else {
             passport.authenticate('local-signup', function(err, user, info) {

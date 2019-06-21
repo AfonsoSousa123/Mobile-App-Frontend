@@ -14,10 +14,6 @@ Vue.use(IonicVueRouter);
 // Vue.use(VueRouter);
 Vue.use(Ionic);
 
-import login from './components/Auth/Login';
-import signup from './components/Auth/SignUp';
-import menu from './components/Menu/BottomMenu';
-
 const router = new IonicVueRouter({
     mode: "history",
     routes: [
@@ -27,13 +23,13 @@ const router = new IonicVueRouter({
             path: "/default",
             name: "default",
             component: () =>
-                import ( /* webpackChunkName: "home" */ "@/components/Menu/BottomMenu.vue"),
+                import ( /* webpackChunkName: "bottomNav" */ "@/components/Menu/BottomMenu.vue"),
             children: [{
                     path: "/login",
                     name: "Login",
                     components: {
                         Login: () =>
-                            import ( /* webpackChunkName: "tab2" */ "@/components/Auth/Login.vue")
+                            import ( /* webpackChunkName: "Login" */ "@/components/Auth/Login.vue")
                     }
                 },
                 {
@@ -41,7 +37,7 @@ const router = new IonicVueRouter({
                     name: "SignUp",
                     components: {
                         SignUp: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Auth/SignUp.vue")
+                            import ( /* webpackChunkName: "Signup" */ "@/components/Auth/SignUp.vue")
                     }
                 },
                 {
@@ -49,7 +45,7 @@ const router = new IonicVueRouter({
                     name: "Home",
                     components: {
                         Home: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Home/Home.vue")
+                            import ( /* webpackChunkName: "Home" */ "@/components/Home/Home.vue")
                     }
                 },
                 {
@@ -57,7 +53,7 @@ const router = new IonicVueRouter({
                     name: "Search",
                     components: {
                         Search: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Search/Search.vue")
+                            import ( /* webpackChunkName: "Search" */ "@/components/Search/Search.vue")
                     }
                 },
                 {
@@ -65,7 +61,7 @@ const router = new IonicVueRouter({
                     name: "Profile",
                     components: {
                         Profile: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Profile/Profile.vue")
+                            import ( /* webpackChunkName: "Porfile" */ "@/components/Profile/Profile.vue")
                     }
                 },
                 {
@@ -73,7 +69,7 @@ const router = new IonicVueRouter({
                     name: "createPost",
                     components: {
                         createPost: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Posts/Create.vue")
+                            import ( /* webpackChunkName: "Create" */ "@/components/Posts/Create.vue")
                     }
                 }
             ]
