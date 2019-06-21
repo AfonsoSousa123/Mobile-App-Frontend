@@ -19,7 +19,7 @@ exports.findUser = function(req, res) {
                 res.send("No users in database!");
             } else {
                 var word = req.body.palavra;
-                var sql = "SELECT utilizador.utilizador_id, utilizador.username, utilizador.email FROM utilizador WHERE username LIKE '%" + word + "%' OR email LIKE '%" + word + "%'";
+                var sql = "SELECT utilizador.utilizador_id, utilizador.username, utilizador.email FROM utilizador WHERE username LIKE '%" + word + "%'";
                 connection.query(sql, function(error, results, fields) {
                     if (error) {
                         res.send(error);
