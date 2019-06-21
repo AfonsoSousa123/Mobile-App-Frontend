@@ -2,11 +2,11 @@
   <ion-page class="ion-page">
     <ion-header>
       <ion-toolbar color="dark">
-        <ion-title>Social Network</ion-title>
-
         <ion-button side="start" class="menu" color="dark" @click="openMenu">
           <ion-icon name="menu" color="light"></ion-icon>
         </ion-button>
+
+        <ion-title>Social Network</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
