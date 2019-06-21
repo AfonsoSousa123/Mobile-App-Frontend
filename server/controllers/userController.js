@@ -1,4 +1,4 @@
-var connection = require('../assets/db/connect');
+var connection = require('../db/connect');
 
 //Requests logout
 exports.userlogout = function(req, res) {

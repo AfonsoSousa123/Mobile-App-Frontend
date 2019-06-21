@@ -60,3 +60,12 @@ router.post('/signup', function(req, res, next) {
 router.delete('/logout', authMiddleware, user_controller.userlogout);
 
 module.exports = router;
+
+//Verifica autenticação do utilizador
+function authMiddleware(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    } else {
+        res.status(401).send("Não está autenticado!");
+    }
+};
