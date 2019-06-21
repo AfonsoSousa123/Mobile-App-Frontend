@@ -4,22 +4,18 @@ var connection = require('../db/connect');
 exports.followPerson = function (req, res) {
     var id = req.user.utilizador_id;
     var secondUser = req.body.id;
-    if (!secondUser) {
-        res.send("No second id was given!");
+    if (id == secondUser) {
+        res.send("Can't follow yourself!");
     } else {
-        if (id == secondUser) {
-            res.send("Can't follow yourself!");
-        } else {
-            //Insert data into the table relations setting relation as following user
-            var sql = "INSERT INTO relations SET status = ?, user1 = ?, user2 = ?";
-            connection.query(sql, [2, id, secondUser], function (error, results, fields) {
-                if (error) {
-                    res.send(error);
-                } else {
-                    res.json(results.insertId);
-                }
-            });
-        }
+        //Insert data into the table relations setting relation as following user
+        var sql = "INSERT INTO relacoes SET status = ?, user1 = ?, user2 = ?";
+        connection.query(sql, [2, id, secondUser], function (error, results, fields) {
+            if (error) {
+                res.send(error);
+            } else {
+                res.json(results.insertId);
+            }
+        });
     }
 }
 
@@ -70,7 +66,7 @@ exports.checkFollow = function (req, res) {
                 if (results.length == 0) {
                     res.json({ follow: false });
                 } else {
-                    res.json({ follow: true, relationID: results[0].relacao_id});
+                    res.json({ follow: true, relationID: results[0].relacao_id });
                 }
             }
         });
