@@ -92,12 +92,14 @@ ion-text {
   margin-bottom: 20px;
 }
 .menu {
-  float: left;
+
+  position: absolute;
+  left: 1;
 }
 .mr-l {
   margin-left: 10px;
 }
-img {
+img{
   display: block;
   margin: 0 auto;
 }
@@ -111,4 +113,5 @@ ion-icon {
   font-size: 25px;
   margin-right: 10px;
 }
+
 </style>
