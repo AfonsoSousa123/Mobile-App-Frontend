@@ -3,7 +3,6 @@
     <ion-header>
       <ion-toolbar color="dark">
         <ion-button side="start" class="menu" color="dark" @click="openMenu">
-          <ion-icon name="menu" color="light"></ion-icon>
         </ion-button>
 
         <ion-title>Social Network</ion-title>
@@ -17,10 +16,10 @@
           
         </div>
 
-        <ion-text>Username</ion-text>
+        <ion-text>{{username}}</ion-text>
         <br>
         <br>
-        <ion-text>Email</ion-text>
+        <ion-text>{{email}}</ion-text>
         <br>
         <br>
       </div>
@@ -46,20 +45,36 @@
 </template>
 
 <script>
+const API_URL = "http://localhost:3000/users/profile";
+import axios from "axios";
+
 export default {
   name: "Profile",
   data() {
     return {
-      Menu: true
+      Menu: true,
+      config: {
+        withCredentials: true
+      },
+      username: "",
+      email: ""
     };
   },
   methods: {
     openMenu() {
       this.Menu.open(true);
+    },
+    buildProfile(res) {
+      this.username = res.data.username,
+      this.email = res.data.email
     }
+  },
+  created() {
+    axios.get(API_URL, this.config).then(Response => this.buildProfile(Response));
   }
 };
 </script>
+
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Rubik:500&display=swap");

@@ -17,10 +17,10 @@
           </ion-avatar>
         </div>
 
-        <ion-text>Username</ion-text>
+        <ion-text>{{username}}</ion-text>
         <br>
         <br>
-        <ion-text>Email</ion-text>
+        <ion-text>{{email}}</ion-text>
         <br>
         <br>
         <ion-button color="success">
@@ -50,17 +50,31 @@
 </template>
 
 <script>
+const API_URL = "http://localhost:3000/users/profile";
+import axios from "axios";
+
 export default {
-  name: "Profile",
+  name: "personProfile",
   data() {
     return {
-      Menu: true
+      Menu: true,
+      config: {
+        withCredentials: true
+      },
+      username: "",
+      email: ""
     };
   },
   methods: {
     openMenu() {
       this.Menu.open(true);
+    },
+    buildProfile(res) {
+      console.log(res);
     }
+  },
+  created() {
+    //axios.get(API_URL, this.config).then(Response => console.log(Response));
   }
 };
 </script>
@@ -80,7 +94,7 @@ ion-text {
 .mr-l {
   margin-left: 10px;
 }
-img{
+img {
   display: block;
   margin: 0 auto;
 }
