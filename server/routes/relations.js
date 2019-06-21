@@ -11,7 +11,7 @@ router.post('/follow', authMiddleware, relations_controller.followPerson);
 router.post('/unfollow', authMiddleware, relations_controller.unfollowPerson);
 
 //Stop following that person
-router.post('/check/follow', authMiddleware, relations_controller.unfollowPerson);
+router.post('/check/follow', authMiddleware, relations_controller.checkFollow);
 
 module.exports = router;
 
