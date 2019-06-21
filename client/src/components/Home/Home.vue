@@ -34,6 +34,9 @@
 </template>
 
 <script>
+const API_URL = "http://localhost:3000/users/find";
+import axios from "axios";
+
 export default {
   name: "Home"
 };
