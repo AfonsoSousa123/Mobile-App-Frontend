@@ -23,6 +23,10 @@
         <ion-text>Email</ion-text>
         <br>
         <br>
+        <ion-button color="success">
+          <ion-icon name="heart" color="dark"></ion-icon>
+          <ion-label class="mr-l" color="dark">Follow</ion-label>
+        </ion-button>
       </div>
 
       <ion-menu side="start" type="push" menuId="Menu" swipeGesture="true">
