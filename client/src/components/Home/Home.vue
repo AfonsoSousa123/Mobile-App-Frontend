@@ -7,7 +7,7 @@
     </ion-header>
     <ion-content padding>
 
-      <ion-card>
+      <ion-card color="Light-shade">
         <ion-img src="https://cdn.discordapp.com/attachments/553763099061125131/591222475656790017/intel_meme.PNG"></ion-img>
 
         <ion-card-header>
