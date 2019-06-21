@@ -59,7 +59,7 @@ export default {
             userId: res.data[i].utilizador_id,
             userName: res.data[i].username,
             userImg:
-              "https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
+              "https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1"
           };
           for (var x = 0; x < this.users.length; x++) {
             if(this.users[x].userId == singlePerson.userId){
