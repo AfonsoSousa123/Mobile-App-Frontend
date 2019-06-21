@@ -2,24 +2,30 @@
 <template>
   <ion-page class="ion-page">
     <ion-header>
-      <ion-toolbar color="secondary">
-        <ion-title>Login Tab</ion-title>
+      <ion-toolbar color="dark">
+        <ion-title>Social Network</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
-      <ion-item>
-        <h2>Login From</h2>
-      </ion-item>
+      <div text-center>
+        <h4>Login</h4>
+      </div>
+      <div padding>
+        <ion-item>
+          <ion-input type="text" placeholder="Email">
+            <ion-icon name="person"></ion-icon>
+          </ion-input>
+        </ion-item>
 
-      <div>
-        <ion-input type="text" value placeholder="Email">
-          <ion-icon name="person"></ion-icon>
-        </ion-input>
+        <ion-item>
+          <ion-input type="password" placeholder="Password">
+            <ion-icon name="lock"></ion-icon>
+          </ion-input>
+        </ion-item>
+      </div>
 
-        <ion-input type="password" value placeholder="Password">
-          <ion-icon name="lock"></ion-icon>
-        </ion-input>
-        <ion-button expand="full">Login</ion-button>
+      <div padding>
+        <ion-button size="large" color="dark" href expand="block">Login</ion-button>
       </div>
     </ion-content>
   </ion-page>
@@ -35,5 +41,12 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Rubik:500&display=swap");
 * {
   font-family: "Rubik", sans-serif;
+}
+ion-button {
+  font-weight: 300;
+}
+ion-icon {
+  margin-right: 10px;
+  font-size: 20px;
 }
 </style>
