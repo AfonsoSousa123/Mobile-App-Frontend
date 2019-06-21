@@ -4,8 +4,8 @@
       <ion-toolbar color="dark">
         <ion-title>Social Network</ion-title>
 
-        <ion-button side="start" class="menu" color="dark">
-          <ion-icon name="menu" color="light" @click="openMenu"></ion-icon>
+        <ion-button side="start" class="menu" color="dark" @click="openMenu">
+          <ion-icon name="menu" color="light" ></ion-icon>
         </ion-button>
       </ion-toolbar>
     </ion-header>
@@ -21,9 +21,15 @@
         <br>
         <br>
         <ion-text>Email</ion-text>
+        <br>
+        <br>
+        <ion-button color="success">
+          <ion-icon name="heart" color="dark" ></ion-icon>
+          <ion-label class="mr-l" color="dark">Follow</ion-label>
+        </ion-button>
       </div>
 
-      <ion-menu side="start" type="push" menuId="menu" swipeGesture="true">
+      <ion-menu side="start" type="push" menuId="Menu" swipeGesture="true">
           <ion-header>
             <ion-toolbar color="danger">
               <ion-title>End Menu</ion-title>
@@ -49,12 +55,12 @@ export default {
   name: "Profile",
   data() {
     return {
-      menu: true,
+      Menu: true,
     };
   },
   methods: {
     openMenu() {
-      this.menu.open(true)
+      this.Menu.open(true)
     }
   }
 };
@@ -71,5 +77,8 @@ ion-text {
 }
 .menu {
   float:left;
+}
+.mr-l {
+  margin-left: 10px;
 }
 </style>
