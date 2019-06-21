@@ -110,8 +110,6 @@ export default {
 * {
   font-family: "Rubik", sans-serif;
 }
-ion-icon {
-  margin-left: 45px;
-}
+
 </style>
 
