@@ -62,6 +62,13 @@ router.delete('/logout', authMiddleware, user_controller.userlogout);
 
 //Find person
 router.post('/find', authMiddleware, user_controller.findUser);
+
+//Get all info related to one person
+router.post('/person/profile', authMiddleware, user_controller.anotherProfile);
+
+//Get all info related to current user
+router.get('/profile', authMiddleware, user_controller.selfProfile);
+
 module.exports = router;
 
 //Verifica autenticação do utilizador
