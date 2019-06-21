@@ -48,4 +48,7 @@ export default {
 p {
   color: black;
 }
+ion-icon {
+  margin-left: 10px;
+}
 </style>

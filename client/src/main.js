@@ -72,7 +72,7 @@ const router = new IonicVueRouter({
                     path: "/create/post",
                     name: "createPost",
                     components: {
-                        Profile: () =>
+                        createPost: () =>
                             import ( /* webpackChunkName: "tab3" */ "@/components/Posts/Create.vue")
                     }
                 }
