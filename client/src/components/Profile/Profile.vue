@@ -5,18 +5,18 @@
         <ion-title>Social Network</ion-title>
 
         <ion-button side="start" class="menu" color="dark" @click="openMenu">
-          <ion-icon name="menu" color="light" ></ion-icon>
+          <ion-icon name="menu" color="light"></ion-icon>
         </ion-button>
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
       <div text-center>
-        <ion-thumbnail>
+        <div>
           <ion-avatar>
-            <img width="200" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
           </ion-avatar>
-        </ion-thumbnail>
-      
+        </div>
+
         <ion-text>Username</ion-text>
         <br>
         <br>
@@ -24,43 +24,42 @@
         <br>
         <br>
         <ion-button color="success">
-          <ion-icon name="heart" color="dark" ></ion-icon>
+          <ion-icon name="heart" color="dark"></ion-icon>
           <ion-label class="mr-l" color="dark">Follow</ion-label>
         </ion-button>
       </div>
 
       <ion-menu side="start" type="push" menuId="Menu" swipeGesture="true">
-          <ion-header>
-            <ion-toolbar color="danger">
-              <ion-title>End Menu</ion-title>
-            </ion-toolbar>
-          </ion-header>
-          <ion-content>
-            <ion-list>
-              <ion-item>Menu Item</ion-item>
-              <ion-item>Menu Item</ion-item>
-              <ion-item>Menu Item</ion-item>
-              <ion-item>Menu Item</ion-item>
-              <ion-item>Menu Item</ion-item>
-            </ion-list>
-          </ion-content>
-        </ion-menu>
+        <ion-header>
+          <ion-toolbar color="danger">
+            <ion-title>End Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+            <ion-item>Menu Item</ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
     </ion-content>
   </ion-page>
 </template>
 
 <script>
-
 export default {
   name: "Profile",
   data() {
     return {
-      Menu: true,
+      Menu: true
     };
   },
   methods: {
     openMenu() {
-      this.Menu.open(true)
+      this.Menu.open(true);
     }
   }
 };
@@ -76,9 +75,13 @@ ion-text {
   margin-bottom: 20px;
 }
 .menu {
-  float:left;
+  float: left;
 }
 .mr-l {
   margin-left: 10px;
+}
+img{
+  display: block;
+  margin: 0 auto;
 }
 </style>
