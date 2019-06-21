@@ -1,7 +1,6 @@
     
 <template>
-  <ion-page
-    class="ion-page">
+  <ion-page class="ion-page">
     <ion-header>
       <ion-toolbar color="secondary">
         <ion-title>Login Tab</ion-title>
@@ -9,15 +8,18 @@
     </ion-header>
     <ion-content padding>
       <ion-item>
-        <h1>Login</h1>
+        <h2>Login From</h2>
       </ion-item>
 
       <div>
-        <ion-icon name="person"></ion-icon>
-        <ion-input type="text" value="" placeholder="Email"></ion-input>
+        <ion-input type="text" value placeholder="Email">
+          <ion-icon name="person"></ion-icon>
+        </ion-input>
 
-        <ion-icon name="lock"></ion-icon>
-        <ion-input type="password"  value="" placeholder="Password"></ion-input>
+        <ion-input type="password" value placeholder="Password">
+          <ion-icon name="lock"></ion-icon>
+        </ion-input>
+        <ion-button expand="full">Login</ion-button>
       </div>
     </ion-content>
   </ion-page>
@@ -25,13 +27,13 @@
 
 <script>
 export default {
-  name: 'Login',
-}
+  name: "Login"
+};
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Rubik:500&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Rubik:500&display=swap");
 * {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 </style>
