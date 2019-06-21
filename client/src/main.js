@@ -32,40 +32,40 @@ const router = new IonicVueRouter({
                     path: "/login",
                     name: "Login",
                     components: {
-                        Login: () =>
-                            import ( /* webpackChunkName: "tab2" */ "@/components/Auth/Login.vue")
+                      Login: () =>
+                          import ( /* webpackChunkName: "tab2" */ "@/components/Auth/Login.vue")
                     }
                 },
                 {
                     path: "/signup",
                     name: "SignUp",
                     components: {
-                        SignUp: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Auth/SignUp.vue")
+                      SignUp: () =>
+                          import ( /* webpackChunkName: "tab3" */ "@/components/Auth/SignUp.vue")
                     }
                 },
                 {
                     path: "/home",
                     name: "Home",
                     components: {
-                        Home: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Home/Home.vue")
+                      Home: () =>
+                          import ( /* webpackChunkName: "tab3" */ "@/components/Home/Home.vue")
                     }
                 },
                 {
                     path: "/search",
                     name: "Search",
                     components: {
-                        Search: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Search/Search.vue")
+                      Search: () =>
+                          import ( /* webpackChunkName: "tab3" */ "@/components/Search/Search.vue")
                     }
                 },
                 {
                     path: "/profile",
                     name: "Profile",
                     components: {
-                        Profile: () =>
-                            import ( /* webpackChunkName: "tab3" */ "@/components/Profile/Profile.vue")
+                      Profile: () =>
+                          import ( /* webpackChunkName: "tab3" */ "@/components/Profile/Profile.vue")
                     }
                 }
             ]

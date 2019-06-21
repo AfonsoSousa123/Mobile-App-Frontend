@@ -24,7 +24,7 @@
 
     <ion-tabs v-if="logged">
       <ion-tab tab="/home">
-        <ion-vue-router name="home"></ion-vue-router>
+        <ion-vue-router name="Home"></ion-vue-router>
       </ion-tab>
 
       <ion-tab tab="/search">
@@ -37,7 +37,7 @@
 
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="/home">
-          <ion-icon name="home"/>
+          <ion-icon name="Home"/>
           <ion-label>Home</ion-label>
         </ion-tab-button>
 
