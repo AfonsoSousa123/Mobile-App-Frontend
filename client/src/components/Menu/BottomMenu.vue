@@ -56,12 +56,31 @@
 </template>
 
 <script>
+const API_URL = "http://localhost:3000/";
+import axios  from "axios";
+
 export default {
   name: "BottomMenu",
   data() {
     return {
-      logged: true
+      logged: true,
+      config: {
+        withCredentials: true
+      }
     };
+  },
+  methods: {
+    handleResponse(res) {
+      if (res.data.logged == true) {
+        this.logged = true;
+      } else {
+        this.logged = false;
+      }
+      this.$router.go(1);
+    }
+  },
+  mounted() {
+    axios.get(API_URL, this.config).then(Response => this.handleResponse(Response));
   }
 };
 </script>
