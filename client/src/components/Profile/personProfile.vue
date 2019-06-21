@@ -2,10 +2,6 @@
   <ion-page class="ion-page">
     <ion-header>
       <ion-toolbar color="dark">
-        <ion-button side="start" class="menu" color="dark" @click="openMenu">
-          <ion-icon name="menu" color="light"></ion-icon>
-        </ion-button>
-
         <ion-title>Social Network</ion-title>
       </ion-toolbar>
     </ion-header>
@@ -31,36 +27,18 @@
           <ion-label class="mr-l" color="dark">Follow</ion-label>
         </ion-button>
       </div>
-
-      <ion-menu side="start" type="push" menuId="Menu" swipeGesture="true">
-        <ion-header>
-          <ion-toolbar color="danger">
-            <ion-title>End Menu</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-          <ion-list>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
     </ion-content>
   </ion-page>
 </template>
 
 <script>
-const API_URL = "http://localhost:3000/users/profile";
+const API_URL = "http://localhost:3000/users/person/profile";
 import axios from "axios";
 
 export default {
   name: "personProfile",
   data() {
     return {
-      Menu: true,
       config: {
         withCredentials: true
       },
@@ -69,15 +47,14 @@ export default {
     };
   },
   methods: {
-    openMenu() {
-      this.Menu.open(true);
-    },
     buildProfile(res) {
-      console.log(res);
+      this.username = res.data.username;
+      this.email = res.data.email;
     }
   },
   created() {
-    //axios.get(API_URL, this.config).then(Response => console.log(Response));
+    var id = this.$route.params.id;
+    axios.post(API_URL,{id},this.config).then(Response => this.buildProfile(Response));
   }
 };
 </script>
