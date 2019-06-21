@@ -11,15 +11,18 @@
     </ion-header>
     <ion-content padding>
       <div text-center>
-        <div>
-          <ion-avatar>
-            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-          </ion-avatar>
-        </div>
 
+        <div class="center">
+          <img class="avatar" width="100" src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1">
+        </div>
+        <br>
+
+        <ion-icon name="contact"></ion-icon>
         <ion-text>{{username}}</ion-text>
         <br>
         <br>
+        
+        <ion-icon name="mail"></ion-icon>
         <ion-text>{{email}}</ion-text>
         <br>
         <br>
@@ -97,5 +100,15 @@ ion-text {
 img {
   display: block;
   margin: 0 auto;
+}
+.center {
+  text-align: center;
+}
+.avatar {
+  border-radius: 50px;
+}
+ion-icon {
+  font-size: 25px;
+  margin-right: 10px;
 }
 </style>
