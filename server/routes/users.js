@@ -57,8 +57,11 @@ router.post('/signup', function(req, res, next) {
     }
 });
 
+//Logout
 router.delete('/logout', authMiddleware, user_controller.userlogout);
 
+//Find person
+router.post('/find', authMiddleware, user_controller.findUser);
 module.exports = router;
 
 //Verifica autenticação do utilizador

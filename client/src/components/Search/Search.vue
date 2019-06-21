@@ -6,25 +6,23 @@
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
-      <ion-searchbar value animated color="dark"></ion-searchbar>
+      <ion-searchbar
+        value
+        animated
+        color="dark"
+        @ionInput="input = $event.target.value"
+        v-on:input="show"
+      ></ion-searchbar>
 
       <div>
-        <ion-list>
+        <ion-list v-for=" user in users" :key="user.userId">
           <ion-item>
             <ion-thumbnail>
               <ion-avatar>
-                <img width="100" height="50" src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
+                <img width="100" height="50" :src="user.userImg">
               </ion-avatar>
             </ion-thumbnail>
-            <ion-label>Finn</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-thumbnail>
-              <ion-avatar>
-                <img width="100" height="50" src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
-              </ion-avatar>
-            </ion-thumbnail>
-            <ion-label>Mega Man X</ion-label>
+            <ion-label>{{user.userName}}</ion-label>
           </ion-item>
         </ion-list>
       </div>
@@ -33,8 +31,53 @@
 </template>
 
 <script>
+const API_URL = "http://localhost:3000/users/find";
+import axios from "axios";
+
 export default {
-  name: "Search"
+  name: "Search",
+  data() {
+    return {
+      input: "",
+      config: {
+        withCredentials: true
+      },
+      users: []
+    };
+  },
+  methods: {
+    addPerson(res) {
+      if (this.input.length == 0) {
+        this.users = [];
+      } else {
+        var singlePerson = {};
+        for (var i = 0; i < res.data.length; i++) {
+          singlePerson = {
+            userId: res.data[i].utilizador_id,
+            userName: res.data[i].username,
+            userImg:
+              "https://ionicframework.com/docs/demos/api/list/avatar-finn.png"
+          };
+          for (var x = 0; x < this.users.length; x++) {
+            if(this.users[x].userId == singlePerson.userId){
+              var existe = true;
+            }
+          }
+          if(!existe){
+          this.users.push(singlePerson);
+          }
+        }
+      }
+    },
+    show() {
+      var data = {
+        palavra: this.input
+      };
+      axios
+        .post(API_URL, data, this.config)
+        .then(Response => this.addPerson(Response));
+    }
+  }
 };
 </script>
 
