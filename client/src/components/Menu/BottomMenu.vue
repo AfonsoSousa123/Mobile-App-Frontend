@@ -72,26 +72,34 @@ export default {
   name: "BottomMenu",
   data() {
     return {
-      logged: true,
+      logged: null,
       config: {
         withCredentials: true
       }
     };
   },
   methods: {
+    redirect(){
+      if(this.logged == true){
+        this.$router.push('/home');
+      }
+    },
     handleResponse(res) {
-      if (res.data.logged == true) {
+      if(res.data.logged == true){
         this.logged = true;
-      } else {
+      }else{
         this.logged = false;
       }
-      //this.$router.go(1);
+      this.redirect();
     }
   },
   mounted() {
-    /* axios
-      .get(API_URL, this.config)
-      .then(Response => this.handleResponse(Response)) */;
+          var config = {
+        withCredentials: true
+      };
+    axios
+      .get(API_URL, config)
+      .then(Response => this.handleResponse(Response));
   }
 };
 </script>

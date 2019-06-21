@@ -10,30 +10,70 @@
       <div text-center>
         <h4>Login</h4>
       </div>
-      <div padding>
-        <ion-item>
-          <ion-input type="text" placeholder="Email">
-            <ion-icon name="person"></ion-icon>
-          </ion-input>
-        </ion-item>
+      <form v-on:submit.prevent="login" id="submitFrom">
+        <div padding>
+          <ion-item>
+            <ion-input type="text" name="email" placeholder="Email">
+              <ion-icon name="person"></ion-icon>
+            </ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-input type="password" placeholder="Password">
-            <ion-icon name="lock"></ion-icon>
-          </ion-input>
-        </ion-item>
-      </div>
+          <ion-item>
+            <ion-input type="password" name="password" placeholder="Password">
+              <ion-icon name="lock"></ion-icon>
+            </ion-input>
+          </ion-item>
+        </div>
 
-      <div padding>
-        <ion-button size="large" color="dark" href expand="block">Login</ion-button>
-      </div>
+        <div padding>
+          <ion-button
+            type="submit"
+            size="large"
+            color="dark"
+            href
+            expand="block"
+            from="submitForm"
+          >Login</ion-button>
+        </div>
+      </form>
     </ion-content>
   </ion-page>
 </template>
 
 <script>
+const API_URL = "http://localhost:3000/users/login";
+import axios from 'axios';
+
 export default {
-  name: "Login"
+  name: "Login",
+  data() {
+    return {
+      config: {
+        withCredentials: true
+      }
+    };
+  },
+  methods: {
+    validateLogin(res){
+      if(res.data.logged == true){
+        this.$router.go('/default');
+      }else{
+        console.log("Failed login!");
+      }
+    },
+    login(e) {
+      e.preventDefault();
+      var email = e.target.elements.email.value;
+      var password = e.target.elements.password.value;
+      var data = {
+        email: email,
+        password: password
+      }
+      axios
+        .post(API_URL, data, this.config)
+        .then(Response => this.validateLogin(Response));
+    }
+  }
 };
 </script>
 
