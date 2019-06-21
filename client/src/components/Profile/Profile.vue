@@ -2,19 +2,19 @@
   <ion-page class="ion-page">
     <ion-header>
       <ion-toolbar color="dark">
-        <ion-title>Social Network</ion-title>
-
         <ion-button side="start" class="menu" color="dark" @click="openMenu">
           <ion-icon name="menu" color="light"></ion-icon>
         </ion-button>
+
+        <ion-title>Social Network</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
       <div>
         <div text-center>
-          <ion-avatar>
+          
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-          </ion-avatar>
+          
         </div>
 
         <ion-text>Username</ion-text>
@@ -71,7 +71,9 @@ ion-text {
   margin-bottom: 20px;
 }
 .menu {
-  float: left;
+
+  position: absolute;
+  left: 0;
 }
 .mr-l {
   margin-left: 10px;

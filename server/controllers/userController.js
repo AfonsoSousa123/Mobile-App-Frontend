@@ -69,4 +69,4 @@ exports.selfProfile = function(req, res) {
         });
     }
 }
-}
+
