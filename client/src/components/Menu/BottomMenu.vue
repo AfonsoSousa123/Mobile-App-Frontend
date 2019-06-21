@@ -35,6 +35,10 @@
         <ion-vue-router name="Profile"></ion-vue-router>
       </ion-tab>
 
+      <ion-tab tab="/person/profile/">
+        <ion-vue-router name="personProfile"></ion-vue-router>
+      </ion-tab>
+
       <ion-tab tab="/create/post">
         <ion-vue-router name="createPost"></ion-vue-router>
       </ion-tab>
