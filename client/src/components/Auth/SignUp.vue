@@ -4,19 +4,17 @@
     class="ion-page">
     <ion-header>
       <ion-toolbar color="secondary">
-        <ion-title>Social Network Tab 2</ion-title>
+        <ion-title>Social Network Tab 3</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
       <ion-item>
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
       </ion-item>
 
       <div>
-        <ion-icon name="person"></ion-icon>
+        <ion-input type="text" clearInput value="" placeholder="Username"></ion-input>
         <ion-input type="text" clearInput value="" placeholder="Email"></ion-input>
-
-        <ion-icon name="lock"></ion-icon>
         <ion-input type="password" clearInput value="" placeholder="Password"></ion-input>
       </div>
     </ion-content>
@@ -25,7 +23,7 @@
 
 <script>
 export default {
-  name: 'tab2',
+  name: 'SignUp',
 }
 </script>
 

@@ -14,54 +14,41 @@ Vue.use(IonicVueRouter);
 // Vue.use(VueRouter);
 Vue.use(Ionic);
 
-const router = new IonicVueRouter({
-  mode: "history",
-  routes: [
-    { path: "/", redirect: "/home" },
+import login from './components/Auth/Login';
+import signup from './components/Auth/SignUp';
+import menu from './components/Menu/BottomMenu';
 
-    {
-      path: "/home",
-      name: "home",
-      component: () =>
-        import(/* webpackChunkName: "home" */ "@/components/HelloWorld.vue"),
-      children: [
+const router = new IonicVueRouter({
+    mode: "history",
+    routes: [
+        { path: "/", redirect: "/default" },
+
         {
-          path: "/tab1",
-          name: "tab1",
-          components: {
-            tab1: () =>
-              import(/* webpackChunkName: "tab1" */ "@/components/Tab1.vue")
-          }
-        },
-        {
-          path: "/tab1/details",
-          name: "tab1-details",
-          components: {
-            tab1: () =>
-              import(/* webpackChunkName: "tab1" */ "@/components/Tab1Details.vue")
-          }
-        },
-        {
-          path: "/tab2",
-          name: "tab2",
-          components: {
-            tab2: () =>
-              import(/* webpackChunkName: "tab2" */ "@/components/Tab2.vue")
-          }
-        },
-        {
-          path: "/tab3",
-          name: "tab3",
-          components: {
-            tab3: () =>
-              import(/* webpackChunkName: "tab3" */ "@/components/Tab3.vue")
-          }
+            path: "/default",
+            name: "default",
+            component: () =>
+                import ( /* webpackChunkName: "home" */ "@/components/Menu/BottomMenu.vue"),
+            children: [{
+                    path: "/login",
+                    name: "Login",
+                    components: {
+                        Login: () =>
+                            import ( /* webpackChunkName: "tab2" */ "@/components/Auth/Login.vue")
+                    }
+                },
+                {
+                    path: "/signup",
+                    name: "SignUp",
+                    components: {
+                        SignUp: () =>
+                            import ( /* webpackChunkName: "tab3" */ "@/components/Auth/SignUp.vue")
+                    }
+                }
+            ]
         }
-      ]
-    }
-  ]
+    ]
 });
 new Vue({
-  router,
-  render: h => h(App)
+    router,
+    render: h => h(App)
 }).$mount("#app");
