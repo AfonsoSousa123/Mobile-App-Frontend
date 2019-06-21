@@ -6,17 +6,20 @@
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
-      <div text-center>Profile page</div>
-        <br>
+      <div text-center>
+        <ion-title>Profile</ion-title>
+         <br>
 
         <ion-avatar>
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          <img class="lol" src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
         </ion-avatar>
         <br>
-        
+
         <ion-title>Username</ion-title>
         <br>
         <ion-title>Email</ion-title>
+      </div>
+       
 
     </ion-content>
   </ion-page>
@@ -33,5 +36,8 @@ export default {
 
 * {
   font-family: "Rubik", sans-serif;
+}
+.lol {
+  margin-left: 201%;
 }
 </style>

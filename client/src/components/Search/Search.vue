@@ -16,7 +16,7 @@
                 <img width="100" height="50" src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
               </ion-avatar>
             </ion-thumbnail>
-            <ion-label>Finn</ion-label>
+            <ion-label class="margin-label">Finn</ion-label>
           </ion-item>
           <ion-item>
             <ion-thumbnail>
@@ -24,7 +24,7 @@
                 <img width="100" height="50" src="https://ionicframework.com/docs/demos/api/list/avatar-finn.png" />
               </ion-avatar>
             </ion-thumbnail>
-            <ion-label>Mega Man X</ion-label>
+            <ion-label class="margin-label">Mega Man X</ion-label>
           </ion-item>
         </ion-list>
       </div>
@@ -44,7 +44,7 @@ export default {
 * {
   font-family: "Rubik", sans-serif;
 }
-ion-label {
-  margin-left: 25px;
+.margin-label {
+  margin-left: 25px
 }
 </style>
