@@ -54,7 +54,7 @@ const API_URL = "http://localhost:3000/users/profile";
 import axios from "axios";
 
 export default {
-  name: "Profile",
+  name: "personProfile",
   data() {
     return {
       Menu: true,
@@ -74,7 +74,7 @@ export default {
     }
   },
   created() {
-    axios.get(API_URL, this.config).then(Response => console.log(Response));
+    //axios.get(API_URL, this.config).then(Response => console.log(Response));
   }
 };
 </script>

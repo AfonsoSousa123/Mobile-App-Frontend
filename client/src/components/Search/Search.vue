@@ -16,7 +16,7 @@
 
       <div>
         <ion-list v-for=" user in users" :key="user.userId">
-          <ion-item>
+          <ion-item @click="getProfile(user.userId)" class="hover">
             <ion-thumbnail>
               <ion-avatar>
                 <img width="100" height="50" :src="user.userImg">
@@ -46,6 +46,9 @@ export default {
     };
   },
   methods: {
+    getProfile(id){
+      this.$router.push({ name: 'personProfile', params: { id } })
+    },
     addPerson(res) {
       if (this.input.length == 0) {
         this.users = [];
@@ -93,5 +96,9 @@ export default {
 ion-label{
   margin-left: 2rem;
   font-weight: bold;
+}
+
+.hover{
+  cursor: pointer;
 }
 </style>
