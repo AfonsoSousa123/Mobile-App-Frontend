@@ -90,4 +90,8 @@ export default {
 .margin-label {
   margin-left: 25px
 }
+ion-label{
+  margin-left: 2rem;
+  font-weight: bold;
+}
 </style>
