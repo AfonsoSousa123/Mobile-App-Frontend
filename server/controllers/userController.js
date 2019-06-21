@@ -69,7 +69,3 @@ exports.selfProfile = function(req, res) {
         });
     }
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 14e8308337333a54ce95e5ac10c12ff748a64e02
