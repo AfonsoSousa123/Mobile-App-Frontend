@@ -26,7 +26,7 @@ CREATE TABLE `post` (
   `titulo` int(10) NOT NULL,
   `descricao` int(40) NOT NULL,
   `user_id` int(11) NOT NULL,
-  FOREIGN KEY (`user_id`) REFERENCES utilizador(`utilizador_id`)
+  FOREIGN KEY (`user_id`) REFERENCES utilizador(`utilizador_id`) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
 -- --------------------------------------------------------
@@ -37,5 +37,7 @@ CREATE TABLE `relacoes` (
   `relacao_id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `status` int(1) NOT NULL,
   `user1` int(11) NOT NULL,
-  `user2` int(11) NOT NULL
+  `user2` int(11) NOT NULL,
+  FOREIGN KEY (`user1`) REFERENCES utilizador(`utilizador_id`) ON UPDATE CASCADE ON DELETE CASCADE,
+  FOREIGN KEY (`user2`) REFERENCES utilizador(`utilizador_id`) ON UPDATE CASCADE ON DELETE CASCADE
 ) ENGINE=InnoDB;

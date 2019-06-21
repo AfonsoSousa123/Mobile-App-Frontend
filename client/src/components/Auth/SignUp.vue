@@ -70,7 +70,7 @@ export default {
       if(res.data.isRegisted == false){
         console.log("Failed login");
       }else{
-        this.$route.go('/login');
+        this.$router.push('/login');
       }
     },
     SignUp(e) {

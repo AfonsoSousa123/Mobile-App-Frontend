@@ -10,6 +10,9 @@ router.post('/follow', authMiddleware, relations_controller.followPerson);
 //Stop following that person
 router.post('/unfollow', authMiddleware, relations_controller.unfollowPerson);
 
+//Stop following that person
+router.post('/check/follow', authMiddleware, relations_controller.unfollowPerson);
+
 module.exports = router;
 
 //Check if user is authenticated
