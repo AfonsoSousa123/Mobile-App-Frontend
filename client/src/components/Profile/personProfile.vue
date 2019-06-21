@@ -10,8 +10,8 @@
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
-      <div>
-        <div text-center>
+      <div text-center>
+        <div>
           <ion-avatar>
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
           </ion-avatar>
@@ -23,6 +23,10 @@
         <ion-text>Email</ion-text>
         <br>
         <br>
+        <ion-button color="success">
+          <ion-icon name="heart" color="dark"></ion-icon>
+          <ion-label class="mr-l" color="dark">Follow</ion-label>
+        </ion-button>
       </div>
 
       <ion-menu side="start" type="push" menuId="Menu" swipeGesture="true">

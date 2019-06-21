@@ -79,27 +79,25 @@ export default {
     };
   },
   methods: {
-    redirect(){
-      if(this.logged == true){
-        this.$router.reload();
+    redirect() {
+      if (this.logged == true) {
+        this.$router.go(1);
       }
     },
     handleResponse(res) {
-      if(res.data.logged == true){
+      if (res.data.logged == true) {
         this.logged = true;
-      }else{
+      } else {
         this.logged = false;
       }
       this.redirect();
     }
   },
   mounted() {
-          var config = {
-        withCredentials: true
-      };
-    axios
-      .get(API_URL, config)
-      .then(Response => this.handleResponse(Response));
+    var config = {
+      withCredentials: true
+    };
+    axios.get(API_URL, config).then(Response => this.handleResponse(Response));
   }
 };
 </script>
@@ -114,7 +112,7 @@ export default {
 ion-label {
   margin-left: 0.5rem;
 }
-ion-icon{
+ion-icon {
   margin-left: 0.5rem;
 }
 </style>

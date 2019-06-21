@@ -31,3 +31,42 @@ exports.findUser = function(req, res) {
         }
     });
 }
+
+//Send all info related to given id user
+exports.anotherProfile = function(req, res) {
+    var id = req.body.id;
+    var sql = "SELECT utilizador.username, utilizador.email, utilizador.utilizador_id FROM utilizador WHERE utilizador.utilizador_id = " + id;
+    connection.query(sql, function(error,results,fields){
+        if (error){
+            res.send(error);
+        }else{
+            if(results.length == 0){
+                res.send("No user with given id!");
+            }else{
+                res.json(results[0]);
+            }
+        }
+    });
+}
+
+//Send all info related to current user
+exports.selfProfile = function(req, res) {
+    var id = req.user.user_id;
+    if(!id){
+        res.send("No id given");
+    }else{
+        var sql = "SELECT utilizador.username, utilizador.email, utilizador.utilizador_id FROM utilizador WHERE utilizador.utilizador_id = " + id;
+        connection.query(sql, function(error,results,fields){
+            if(error){
+                res.send(error);
+            }else{
+                if(results.length == 0){
+                    res.send("No user with given id!");
+                }else{
+                    res.json(results[0]);
+                }
+            }
+        });
+    }
+}
+}
