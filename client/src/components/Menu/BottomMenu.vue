@@ -9,8 +9,8 @@
         <ion-vue-router name="SignUp"></ion-vue-router>
       </ion-tab>
 
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="/login">
+      <ion-tab-bar slot="bottom" color="dark">
+        <ion-tab-button tab="/login" default>
           <ion-icon name="contact"/>
           <ion-label>Login</ion-label>
         </ion-tab-button>
@@ -24,7 +24,7 @@
 
     <ion-tabs v-if="logged">
       <ion-tab tab="/home">
-        <ion-vue-router name="Home"></ion-vue-router>
+        <ion-vue-router name="Home" default></ion-vue-router>
       </ion-tab>
 
       <ion-tab tab="/search">
@@ -35,7 +35,7 @@
         <ion-vue-router name="profile"></ion-vue-router>
       </ion-tab>
 
-      <ion-tab-bar slot="bottom">
+      <ion-tab-bar slot="bottom" color="dark">
         <ion-tab-button tab="/home">
           <ion-icon name="Home"/>
           <ion-label>Home</ion-label>
