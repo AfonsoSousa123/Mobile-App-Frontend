@@ -8,8 +8,9 @@
     <ion-content padding>
 
       <ion-card>
+        <ion-img src="https://cdn.discordapp.com/attachments/553763099061125131/591222475656790017/intel_meme.PNG"></ion-img>
+
         <ion-card-header>
-          <ion-img src="https://cdn.discordapp.com/attachments/553763099061125131/591222475656790017/intel_meme.PNG"></ion-img>
           <ion-card-title>Post Title</ion-card-title>
         </ion-card-header>
 
@@ -20,9 +21,11 @@
 
         <ion-button color="white">
           <ion-icon name="thumbs-up" color="dark"></ion-icon>
+          <p>30</p>
         </ion-button>
         <ion-button color="white">
           <ion-icon name="thumbs-down" color="dark"></ion-icon>
+          <p>2</p>
         </ion-button>
       </ion-card>
 
@@ -41,5 +44,8 @@ export default {
 
 * {
   font-family: "Rubik", sans-serif;
+}
+p {
+  color: black;
 }
 </style>

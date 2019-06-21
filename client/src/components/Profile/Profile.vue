@@ -6,8 +6,11 @@
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
+      <div text-center>Profile</div>
 
+      <div>
 
+      </div>
 
     </ion-content>
   </ion-page>

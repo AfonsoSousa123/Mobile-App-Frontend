@@ -10,7 +10,7 @@
       </ion-tab>
 
       <ion-tab-bar slot="bottom" color="dark">
-        <ion-tab-button tab="/login" default>
+        <ion-tab-button tab="/login">
           <ion-icon name="contact"/>
           <ion-label>Login</ion-label>
         </ion-tab-button>
@@ -24,7 +24,7 @@
 
     <ion-tabs v-if="logged">
       <ion-tab tab="/home">
-        <ion-vue-router name="Home" default></ion-vue-router>
+        <ion-vue-router name="Home"></ion-vue-router>
       </ion-tab>
 
       <ion-tab tab="/search">
@@ -32,7 +32,7 @@
       </ion-tab>
 
       <ion-tab tab="/profile">
-        <ion-vue-router name="profile"></ion-vue-router>
+        <ion-vue-router name="Profile"></ion-vue-router>
       </ion-tab>
 
       <ion-tab-bar slot="bottom" color="dark">
@@ -65,3 +65,15 @@ export default {
   }
 };
 </script>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Rubik:500&display=swap");
+
+* {
+  font-family: "Rubik", sans-serif;
+}
+ion-icon {
+  margin-left: 10px;
+}
+</style>
+

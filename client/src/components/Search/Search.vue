@@ -7,7 +7,7 @@
     </ion-header>
     <ion-content padding>
 
-      <ion-searchbar color="dark"></ion-searchbar>
+      <ion-searchbar value="" animated color="dark"></ion-searchbar>
 
       <div>
 
