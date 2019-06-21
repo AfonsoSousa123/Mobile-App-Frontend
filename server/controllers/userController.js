@@ -51,7 +51,7 @@ exports.anotherProfile = function(req, res) {
 
 //Send all info related to current user
 exports.selfProfile = function(req, res) {
-    var id = req.user.user_id;
+    var id = req.user.utilizador_id;
     if(!id){
         res.send("No id given");
     }else{
@@ -68,5 +68,4 @@ exports.selfProfile = function(req, res) {
             }
         });
     }
-}
 }
